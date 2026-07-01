@@ -1,0 +1,66 @@
+Filter Builder
+TextField
+Select
+Autocomplete (for multi-select)
+Checkbox
+Switch
+Button
+Chip
+Stack
+Box
+Paper
+Typography
+
+
+/*
+{
+  "fields":[
+    {
+      "id": "name",
+      "label" : "Name",
+      "accessor":"name",
+      "filterable": "false",
+      "sortable" : "false",
+      "type":"text | select | date | boolean"
+    },
+     {
+      "id": "status",
+      "label" : "Status",
+      "accessor":"status",
+      "type":"select",
+       "options": [
+         {
+           "id":"active",
+           "label":"Active"
+         },
+         {
+           "id":"inactive",
+           "label":"Inactive"
+         }
+       ]
+    },
+     {
+      "id": "date",
+      "label" : "Date",
+      "accessor":"date",
+      "type":"date"
+    },
+    {
+      "id": "amount",
+      "label" : "Amount",
+      "accessor":"amount",
+      "type":"number"
+    },
+    {
+      "id": "isRefunded",
+      "label" : "Refunded",
+      "accessor":"isRefunded",
+      "type":"boolean"
+    }
+  ],
+
+  "rows":[
+
+  ]
+}
+*/
