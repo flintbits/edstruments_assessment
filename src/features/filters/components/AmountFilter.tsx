@@ -39,7 +39,7 @@ export default function AmountFilter({
     };
 
     return (
-        <Box sx={{ minWidth: 320, display: "flex", gap: 8, alignItems: "center" }}>
+        <Box sx={{ minWidth: 320, display: "flex", gap: 2, alignItems: "flex-start", flexWrap: "wrap" }}>
             <TextField
                 label="Min"
                 type="number"
@@ -59,6 +59,7 @@ export default function AmountFilter({
                         pattern: "[0-9]*([.,][0-9]+)?",
                     },
                 }}
+                sx={{ flex: "1 1 140px" }}
             />
             <TextField
                 label="Max"
@@ -77,6 +78,7 @@ export default function AmountFilter({
                         pattern: "[0-9]*([.,][0-9]+)?",
                     },
                 }}
+                sx={{ flex: "1 1 140px" }}
             />
         </Box>
     );

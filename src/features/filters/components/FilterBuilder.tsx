@@ -376,9 +376,19 @@ export default function FilterBuilder({ fields, rows, onApply }: FilterBuilderPr
                     if (!field) return null;
                     const operators = OPERATOR_MAP[field.type];
                     const errorText = getFilterError(filter);
-                    return <div key={filter.id} style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                    return <Box
+                        key={filter.id}
+                        sx={{
+                            display: "flex",
+                            alignItems: "flex-start",
+                            justifyContent: "space-between",
+                            flexWrap: "wrap",
+                            gap: 2,
+                            width: "100%",
+                        }}
+                    >
                         {/* Field Dropdown */}
-                        <Box sx={{ minWidth: 320 }} >
+                        <Box sx={{ minWidth: 220, flex: "0 0 220px" }}>
                             <FormControl fullWidth>
                                 <InputLabel id={`field-select-label-${filter.id}`}>
                                     Field
@@ -402,7 +412,7 @@ export default function FilterBuilder({ fields, rows, onApply }: FilterBuilderPr
                         </Box>
 
                         {/* Operator Dropdown */}
-                        <Box sx={{ minWidth: 320 }}>
+                        <Box sx={{ minWidth: 220, flex: "0 0 220px" }}>
                             <FormControl fullWidth>
                                 <InputLabel id={`operator-select-label-${filter.id}`}>
                                     Operator
@@ -428,10 +438,20 @@ export default function FilterBuilder({ fields, rows, onApply }: FilterBuilderPr
 
 
                         {/* Value Selector */}
-                        {getFilterInputs(filter, field.type, field.options, errorText)}
+                        <Box sx={{ minWidth: 320, flex: "1 1 320px" }}>
+                            {getFilterInputs(filter, field.type, field.options, errorText)}
+                        </Box>
 
-                        <Button variant="outlined" color="error" onClick={() => handleDelete(filter.id)} size="small">Delete</Button>
-                    </div>
+                        <Button
+                            variant="outlined"
+                            color="error"
+                            onClick={() => handleDelete(filter.id)}
+                            size="small"
+                            sx={{ alignSelf: "flex-start", mt: 1 }}
+                        >
+                            Delete
+                        </Button>
+                    </Box>
                 })}
             </div>
 
