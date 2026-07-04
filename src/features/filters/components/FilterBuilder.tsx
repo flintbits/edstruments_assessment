@@ -9,6 +9,7 @@ import BooleanFilter from "./BooleanFilter";
 import DateFilter from "./DateFilter";
 import NumberFilter from "./NumberFilter";
 import AmountFilter from "./AmountFilter";
+import FilterImportExport from "./FilterImportExport";
 
 
 interface FilterBuilderProps {
@@ -369,6 +370,7 @@ export default function FilterBuilder({ fields, rows, onApply }: FilterBuilderPr
             {/* <pre>
                 {JSON.stringify(filters, null, 2)}
             </pre> */}
+            <FilterImportExport filters={filters} setFilters={setFilters} />
 
             <div style={{ display: "flex", alignContent: "center", justifyContent: "space-between", flexDirection: "column", gap: 14 }}>
                 {filters.map((filter) => {
