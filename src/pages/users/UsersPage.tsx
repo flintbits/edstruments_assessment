@@ -1,5 +1,5 @@
 import { memo, useMemo, useState } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import DataTable from "../../components/Table/DataTable";
 import FilterBuilder from "../../features/filters/components/FilterBuilder";
 import { userTableConfig, users } from "./userFields";
@@ -11,7 +11,6 @@ const UsersPage = memo(function UsersPage() {
 
     return (
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-            <Typography variant="h5">Users</Typography>
             <FilterBuilder
                 fields={tableConfig.fields}
                 rows={userData}
